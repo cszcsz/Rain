@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>水面雨</title>
+    <!--设置样式及背景图片*/-->
+    <style>                             
+        html,body {
+            width: 100%;
+            height: 100%;
+            background-image: url("bc6.jpg");
+            background-repeat:no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas"></canvas>                  <!--创建画布标签-->
+    <audio  autoplay="autoplay">                   <!--创建音频元素-->
+    <source src="2.mp3">
+
+<script>
+    var WIDTH=document.body.clientWidth;                //获得浏览器主体宽度
+    var HEIGHT=document.body.clientHeight;              //获得浏览器主体高度
+    var c=document.getElementById("canvas");            //获取画布对象    
+    var cxt=c.getContext("2d");                         //获取画布上下文
+    var X=new Array;                                    //设置雨滴的X坐标
+    var Y=new Array;                                    //设置雨滴的Y坐标
+    canvas.height=HEIGHT;
+    canvas.width=WIDTH;
+    var RAIN_NUM=45;                                     //设置雨滴数目
+
+    //画椭圆函数
+    function DrawEllipse(cvs,X,Y,Ax,By){
+        var x=X+Ax;
+        var y=Y;
+        cvs.moveTo(x,y);
+        for (var i=0;i<=360;i++){
+            var theta=i*Math.PI/180;
+            var x=X+Ax*Math.cos(theta);
+            var y=Y+By*Math.sin(theta);
+            cvs.lineTo(x,y);
+        }
+        cvs.strokeStyle='rgba(255,255,255,0.5)';               //设置椭圆颜色
+        cvs.stroke();
+    }
+
+    //setInterval作用为每隔120毫秒调用function()函数
+    setInterval(
+            function () {
+                cxt.clearRect(0,0,WIDTH,HEIGHT);                        //清空画布
+                for(var j=0;j<RAIN_NUM;j++){
+                    var RAIN_LENGTH=Math.random()*20;                   //设置雨滴长度为随机值
+                    cxt.beginPath();                                    //开始绘图
+                    cxt.moveTo(X[j],Y[j]);
+                    cxt.lineTo(X[j]+8,Y[j]+RAIN_LENGTH+22);             //两点连线
+                    cxt.closePath();
+                    cxt.stroke();
+                    cxt.strokeStyle="rgb(255,255,255)";                 //设置雨滴线段颜色
+                    cxt.lineWidth=2;                                    //设置雨滴宽度
+
+                    //三个判断条件，若雨滴y坐标大于一定高度则开始画椭圆
+                    if(Y[j]>HEIGHT*7/10){
+                        var LENGTH=(Math.random()+0.05)*50;
+                        DrawEllipse(cxt,X[j]+1,Y[j]+RAIN_LENGTH+20,LENGTH,LENGTH/2);
+                    }
+                     if(Y[j]>HEIGHT*3/4){
+                        var LENGTH=(Math.random()+0.05)*60;
+                        DrawEllipse(cxt,X[j]+1,Y[j]+RAIN_LENGTH+20,LENGTH,LENGTH/2);
+                    }
+                    if(Y[j]>HEIGHT*5/6){
+                        var LENGTH=(Math.random()+0.05)*70;
+                        DrawEllipse(cxt,X[j]+1,Y[j]+RAIN_LENGTH+20,LENGTH,LENGTH/2);
+                    }
+                    //随机设置雨滴的x,y坐标
+                    X[j]=(Math.random()*WIDTH);
+                    Y[j]=(Math.random()*HEIGHT);
+                }
+
+            }
+            ,120
+    )
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

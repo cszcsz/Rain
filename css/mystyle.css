@@ -1,0 +1,118 @@
+            .first{
+                position: relative;                     
+                    width: 132px;
+                    height: 46px;
+                    margin-right: 40px;
+                    padding: 0px;
+                    margin-top: 20px;
+            }
+            .second{
+                    position: relative;
+                    width: 132px;
+                    height: 46px;
+                    margin: 0px;
+                    padding: 0px;
+                    margin-top: 20px;
+            }
+            #button{
+                height: 150px;
+                width: 340px;
+                float: left;
+                margin-top: 0px;
+                margin-left:100px;
+                margin-right: auto;
+            }
+            #p1{
+                position: relative;
+                margin-left: 75px;
+            }
+            #p2{
+                position: relative;
+                margin-left: 90px;
+            }
+            #yun1{
+                position: relative;
+                margin-left: 70px
+                margin
+            }
+            #yun2{
+                position: relative;
+                margin-left: 90px;
+            }
+            #u1{
+                position: relative;
+                margin-top: 5px;
+            }
+            #u2{
+                position: relative;
+                margin-top: 60px;
+            }
+            #u3{
+                position: relative;
+                margin-top: 20px;
+            }
+            #u4{
+                position: relative;
+                margin-top: 80px;
+            }
+             #u5{
+                position: relative;
+                margin-top: 50px;
+            }
+             #u6{
+                position: relative;
+                margin-top: 90px;
+            }
+             #u7{
+                position: relative;
+                margin-top: 100px;
+            }
+            #fangzi{
+            	float: left;
+            }
+
+            #grass{
+            	float: left;
+
+            }
+            #san
+            {
+            	margin-top: 100px;
+            	height: 530px;
+            	width: 1920px;
+            }
+            #people{
+
+            	position: relative;
+            	float: left;
+          		z-index: 1;
+          		top:170px;
+
+
+			}
+			#fj{
+				position: relative;
+				float: left;
+			}
+			#duihua{
+				position: relative;
+				float: left;
+				right: 65px;
+				height: 280px;
+				width: 380px;
+				background-image: url(../images/duihua.png);
+				background-repeat:no-repeat;
+				background-size: cover;
+			}
+            
+            p{
+            	margin: auto;
+            	font-size: 2em;
+            	color: red;
+            }
+
+			#wenzi{
+				position: relative;
+				margin: auto;
+				top:55px;
+			}
